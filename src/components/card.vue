@@ -1,7 +1,7 @@
 <!-- Vue Single File Component, Created by liukun on 2023/7/22. -->
 <template>
   <div id="card">
-    <card :title="title" :bgColor="bgColor">
+    <card :title="title" :bgColor="bgColor" :iconIndex="iconIndex">
       <count-to
         :startVal="countTo.startVal"
         :endVal="countTo.endVal"
@@ -48,6 +48,11 @@ export default {
           decimals: 2
         }
       }
+    },
+    // icon 图标索引
+    iconIndex: {
+      type: Number,
+      default: 5
     }
   },
   components: {
@@ -57,7 +62,9 @@ export default {
         // 卡片标题
         title: String,
         // 背景颜色
-        bgColor: Array
+        bgColor: Array,
+        // icon 图标索引
+        iconIndex: Number
       },
       render: function (createElement) {
         return createElement('div', {
@@ -87,7 +94,7 @@ export default {
           }),
           createElement('img', {
             attrs: {
-              src: require('../assets/icon.png')
+              src: require(`./images/icon_${this.iconIndex}.png`)
             },
             class: 'icon'
           })
