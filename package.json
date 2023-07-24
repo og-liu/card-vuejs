@@ -1,6 +1,6 @@
 {
   "name": "card-vuejs",
-  "description": "A Vue.js project",
+  "description": "带数字动画的彩色展示卡片",
   "version": "1.0.5",
   "author": "LiuKun <308880147@qq.com>",
   "license": "MIT",
